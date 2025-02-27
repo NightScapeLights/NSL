@@ -1,0 +1,1 @@
+# Inventorygoods.github.io
