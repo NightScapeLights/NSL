@@ -1,58 +1,82 @@
+/* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Header Section */
 header {
-    background-color: #6200ea;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
+/* Main Content Container */
 .container {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.3); /* Glass effect */
     padding: 20px;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism */
 }
 
-h1 {
-    text-align: center;
-}
-
+/* Product Cards */
 .product {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    transition: transform 0.3s ease-in-out;
 }
 
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Product Images */
 .product img {
-    max-width: 100px;
-    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 15px;
 }
 
-.product-details {
-    flex: 1;
-}
-
+/* Product Buttons */
 .product a {
-    display: inline-block;
-    text-decoration: none;
-    background: #6200ea;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
     color: white;
     padding: 8px 12px;
-    border-radius: 5px;
-    margin-top: 5px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .product a:hover {
-    background: #4500b5;
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+    transform: scale(1.1);
+}
+
+/* Amazon Disclosure */
+.disclosure {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background: #ffdd57;
+    border-radius: 10px;
+    width: 80%;
+    font-weight: bold;
 }
