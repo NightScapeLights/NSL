@@ -3,127 +3,372 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Illuminate your yard with NSL's premium outdoor solar lighting solutions. Elegant, energy-efficient, and professionally installed.">
+    <meta name="description" content="NSL Night-Scape Lighting — Premium solar outdoor lighting, professionally installed. Transform your home after dark. Call 360-302-0630.">
     <title>NSL | Night-Scape Lighting</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        header {
-            background-color: #222;
-            padding: 20px;
-        }
-        header h1 {
-            color: gold;
-            font-size: 2rem;
-        }
-        .hero {
-            padding: 20px;
-            font-size: 1.2rem;
-        }
-        .gallery {
-            margin: 40px 0;
-        }
-        .gallery h2 {
-            color: gold;
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            padding: 20px;
-        }
-        .image-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        .description-box {
-            margin: 20px;
-            padding: 10px;
-            border: 1px solid gold;
-            border-radius: 10px;
-            min-height: 50px;
-        }
-        .cta {
-            background-color: #222;
-            padding: 30px;
-            margin-top: 30px;
-        }
-        .cta h2 {
-            color: gold;
-        }
-        .cta p {
-            font-size: 1.2rem;
-        }
-        .call-button {
-            display: inline-block;
-            background-color: gold;
-            color: black;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-        footer {
-            background-color: #000;
-            padding: 20px;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Illuminate Your Yard With NSL</h1>
-    </header>
 
-    <section class="hero">
-        <p>Upgrade your outdoor space with stunning solar lighting. No wiring. No high electricity bills. Just beautiful lighting powered by the sun.</p>
-    </section>
-
-    <section class="gallery">
-        <h2>House Lighting</h2>
-        <div class="image-grid">
-            <img src="images/Lighting1.png" alt="House Lighting 1">
-            <img src="images/Lighting3.png" alt="House Lighting 2">
-            <img src="images/Lighting2.png" alt="House Lighting 3">
-            <img src="images/Lighting7.png" alt="House Lighting 4">
-            <img src="images/Lighting6.png" alt="House Lighting 5">
-            <img src="images/Lighting4.png" alt="House Lighting 6">
+    <!-- ===== NAVBAR ===== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-nsl">NSL</span>
+                <span class="logo-tagline">Night-Scape Lighting</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Free Quote</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-        <div class="description-box"> Warm lighting brings your yard to life, adding depth, style, and a welcoming glow—all without the hassle of wiring or high energy costs </div>
-    </section>
+    </nav>
 
-    <section class="gallery">
-        <h2>Yard Design Lighting</h2>
-        <div class="image-grid">
-            <img src="images/House1.png" alt="Yard Lighting 1">
-            <img src="images/House2.png" alt="Yard Lighting 2">
-            <img src="images/House3.png" alt="Yard Lighting 3">
-            <img src="images/House4.png" alt="Yard Lighting 4">
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+        <canvas id="stars"></canvas>
+        <div class="hero-glow"></div>
+        <div class="hero-sweep"></div>
+        <div class="hero-content">
+            <p class="hero-badge">Premium Solar Lighting</p>
+            <h1 class="hero-title">
+                Transform Your Home<br>
+                <span class="gold-gradient-text">After Dark</span>
+            </h1>
+            <p class="hero-sub">
+                Elegant. Energy-efficient. Professionally installed.<br>
+                Solar lighting that brings your property to life — every single night.
+            </p>
+            <div class="hero-buttons">
+                <a href="tel:3603020630" class="btn btn-gold">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                    Call Now: 360-302-0630
+                </a>
+                <a href="#gallery" class="btn btn-outline">View Our Work</a>
+            </div>
         </div>
-        <div class="description-box"> A well-lit home just feels better. It’s welcoming when you pull into the driveway, comforting when you step outside at night, and a little extra peace of mind knowing everything is visible. These solar lights look good but also make your home feel safer and more inviting, all while running on nothing but sunlight. </div>
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
     </section>
 
-    <section class="cta">
-        <h2>Request Installation</h2>
-        <p>Want to upgrade your yard? Call us now to schedule an installation!</p>
-        <a href="tel:3603020630" class="call-button">Call Now: 360-302-0630</a>
+    <!-- ===== STATS ===== -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card reveal">
+                <div class="stat-num"><span class="counter" data-target="500">0</span><span>+</span></div>
+                <p>Homes Illuminated</p>
+            </div>
+            <div class="stat-card reveal reveal-d1">
+                <div class="stat-num"><span class="counter" data-target="5">0</span><span>★</span></div>
+                <p>Star Rating</p>
+            </div>
+            <div class="stat-card reveal reveal-d2">
+                <div class="stat-num"><span class="counter" data-target="100">0</span><span>%</span></div>
+                <p>Solar Powered</p>
+            </div>
+            <div class="stat-card reveal reveal-d3">
+                <div class="stat-num"><span>$</span><span class="counter" data-target="0">0</span></div>
+                <p>Added Electric Cost</p>
+            </div>
+        </div>
     </section>
 
+    <!-- ===== WHY US ===== -->
+    <section id="why-us" class="features-section">
+        <div class="section-header reveal">
+            <p class="section-eyebrow">Why NSL</p>
+            <h2>Lighting Done <span class="gold-gradient-text">Right</span></h2>
+            <p class="section-sub">We don't just install lights — we design experiences.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </div>
+                <h3>100% Solar Powered</h3>
+                <p>Zero wiring. Zero electricity costs. Our lights charge all day and illuminate all night — completely free energy from the sun.</p>
+            </div>
+            <div class="feature-card reveal reveal-d1">
+                <div class="feature-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3>Professional Install</h3>
+                <p>Our crew handles everything. Perfectly placed, angled, and secured for maximum visual impact with zero hassle for you.</p>
+            </div>
+            <div class="feature-card reveal reveal-d2">
+                <div class="feature-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Added Security</h3>
+                <p>A well-lit home deters intruders and creates visibility around your property, giving your family peace of mind every night.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                <h3>Custom Design</h3>
+                <p>Every property is unique. We create a custom lighting plan tailored specifically to your yard's layout and style.</p>
+            </div>
+            <div class="feature-card reveal reveal-d1">
+                <div class="feature-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <h3>Warm Ambiance</h3>
+                <p>Carefully selected warm-toned fixtures that enhance your home's natural beauty and create an inviting outdoor atmosphere.</p>
+            </div>
+            <div class="feature-card reveal reveal-d2">
+                <div class="feature-icon-wrap">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+                <h3>All-Weather Durable</h3>
+                <p>Built to handle rain, snow, heat, and everything in between. Your lights shine bright no matter the season.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery" class="gallery-section">
+        <div class="section-header reveal">
+            <p class="section-eyebrow">Our Work</p>
+            <h2>The NSL <span class="gold-gradient-text">Portfolio</span></h2>
+            <p class="section-sub">Real homes. Real results. All solar powered.</p>
+        </div>
+        <div class="gallery-tabs reveal">
+            <button class="tab-btn active" data-tab="house">House Lighting</button>
+            <button class="tab-btn" data-tab="yard">Yard Design</button>
+        </div>
+
+        <div class="gallery-grid active" id="tab-house">
+            <div class="gallery-item" data-src="images/Lighting1.png">
+                <img src="images/Lighting1.png" alt="House Lighting Installation 1" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+            <div class="gallery-item" data-src="images/Lighting3.png">
+                <img src="images/Lighting3.png" alt="House Lighting Installation 2" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+            <div class="gallery-item" data-src="images/Lighting2.png">
+                <img src="images/Lighting2.png" alt="House Lighting Installation 3" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+            <div class="gallery-item" data-src="images/Lighting7.png">
+                <img src="images/Lighting7.png" alt="House Lighting Installation 4" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+            <div class="gallery-item" data-src="images/Lighting6.png">
+                <img src="images/Lighting6.png" alt="House Lighting Installation 5" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+            <div class="gallery-item" data-src="images/Lighting4.png">
+                <img src="images/Lighting4.png" alt="House Lighting Installation 6" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+        </div>
+
+        <div class="gallery-grid" id="tab-yard">
+            <div class="gallery-item" data-src="images/House1.png">
+                <img src="images/House1.png" alt="Yard Design Lighting 1" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+            <div class="gallery-item" data-src="images/House2.png">
+                <img src="images/House2.png" alt="Yard Design Lighting 2" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+            <div class="gallery-item" data-src="images/House3.png">
+                <img src="images/House3.png" alt="Yard Design Lighting 3" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+            <div class="gallery-item" data-src="images/House4.png">
+                <img src="images/House4.png" alt="Yard Design Lighting 4" loading="lazy">
+                <div class="gallery-overlay"><span>View Photo</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LIGHTBOX ===== -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
+        <button class="lb-prev" id="lb-prev" aria-label="Previous">&#10094;</button>
+        <div class="lb-img-wrap">
+            <img id="lb-img" src="" alt="Enlarged photo">
+        </div>
+        <button class="lb-next" id="lb-next" aria-label="Next">&#10095;</button>
+        <div class="lb-counter" id="lb-counter"></div>
+    </div>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="section-header reveal">
+            <p class="section-eyebrow">Happy Customers</p>
+            <h2>What People Are <span class="gold-gradient-text">Saying</span></h2>
+        </div>
+        <div class="testimonials-slider reveal">
+            <div class="testimonials-track" id="t-track">
+                <div class="testimonial-card">
+                    <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="t-quote">"NSL completely transformed our front yard. The warm lighting makes our house look incredible at night. Our neighbors keep asking who did it — we love it!"</p>
+                    <div class="t-author">
+                        <div class="t-avatar">S</div>
+                        <div class="t-info"><strong>Sarah M.</strong><span>Homeowner</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="t-quote">"Professional, fast, and the results are absolutely stunning. We love sitting outside in the evenings now. Best home investment we've made."</p>
+                    <div class="t-author">
+                        <div class="t-avatar">J</div>
+                        <div class="t-info"><strong>James R.</strong><span>Property Owner</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="t-quote">"I was skeptical about solar lights being bright enough, but these are amazing. No wires, no electric bill, and they look gorgeous every single night."</p>
+                    <div class="t-author">
+                        <div class="t-avatar">L</div>
+                        <div class="t-info"><strong>Linda K.</strong><span>Homeowner</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="t-quote">"From the first call to final installation, the NSL team was fantastic. Our home looks like something out of a magazine every night now. Worth every penny."</p>
+                    <div class="t-author">
+                        <div class="t-avatar">M</div>
+                        <div class="t-info"><strong>Mike T.</strong><span>Business Owner</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="t-controls">
+                <button class="t-btn t-prev" id="t-prev" aria-label="Previous review">&#10094;</button>
+                <div class="t-dots" id="t-dots"></div>
+                <button class="t-btn t-next" id="t-next" aria-label="Next review">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner">
+        <div class="cta-glow"></div>
+        <div class="cta-content reveal">
+            <p class="section-eyebrow">Ready to Get Started?</p>
+            <h2>Light Up Your Home Tonight</h2>
+            <p>Professional installation. Solar powered. Zero hassle. Zero extra electric bill.</p>
+            <a href="tel:3603020630" class="btn btn-gold btn-large">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                Call Now: 360-302-0630
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <div class="section-header reveal">
+            <p class="section-eyebrow">Get Started</p>
+            <h2>Request a <span class="gold-gradient-text">Free Quote</span></h2>
+            <p class="section-sub">Fill out the form and we'll get back to you within 24 hours.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info reveal">
+                <h3>Let's Talk Lighting</h3>
+                <p>Whether you want to accent your roofline, light up a pathway, or transform your entire yard — we've got you covered. Tell us about your project and we'll design the perfect plan.</p>
+                <div class="contact-details">
+                    <a href="tel:3603020630" class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+                        </div>
+                        <span>360-302-0630</span>
+                    </a>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <span>Serving Your Area</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <span>Mon – Sat: 8am – 6pm</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form reveal reveal-d2" id="contact-form" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="fname" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lname" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(360) 555-0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="optional">(optional)</span></label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell Us About Your Project</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Describe your yard, areas you'd like lit, any questions..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-gold btn-full">Send My Request</button>
+                <div class="form-success" id="form-success">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <p>Request sent! We'll be in touch within 24 hours.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>Contact Us | Serving Your Area | &copy; 2025 NSL - Night-Scape Lighting</p>
+        <div class="footer-main">
+            <div class="footer-brand">
+                <span class="logo-nsl">NSL</span>
+                <p>Night-Scape Lighting</p>
+                <p class="footer-tagline">Powered by the sun. Perfected by us.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <a href="#home">Home</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="footer-contact">
+                <a href="tel:3603020630" class="footer-phone">360-302-0630</a>
+                <p>Mon – Sat: 8am – 6pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 NSL – Night-Scape Lighting. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <a href="#home" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+    </a>
+
+    <!-- ===== MOBILE CALL BAR ===== -->
+    <a href="tel:3603020630" class="mobile-call-bar" aria-label="Call NSL">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        Tap to Call: 360-302-0630
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
